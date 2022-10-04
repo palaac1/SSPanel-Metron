@@ -12,6 +12,11 @@
 
 `cd /www/wwwroot/你的网站文件夹名`
 
+
+```shell
+git clone -b master https://github.com/palaac1/SSPanel-Metron.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
+```
+
 #### 5.使用composer安装依赖
 
 
