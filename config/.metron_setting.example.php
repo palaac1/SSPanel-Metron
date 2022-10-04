@@ -44,7 +44,7 @@ $_MT['pop_text'] = '
 ';
 
 #####  签到设置  --------------------------------------------------------------------------------------------
-$_MT['daily_bonus_mode'] = 'level';  // 签到的模式，sspanel: 为原版模式，level: 为不同等级给不同的签到流量
+$_MT['daily_bonus_mode'] = 'sspanel';  // 签到的模式，sspanel: 为原版模式，level: 为不同等级给不同的签到流量
 $_MT['daily_bonus_settings'] = [  // 为不同等级给不同的签到流量，仅在 daily_bonus_mode 为 level 时生效
     0 => [  // 用户等级
         'min' => 0,  // 最低流量，单位为MB
@@ -77,21 +77,21 @@ $_MT['take_account_type']   = [ '支付宝', 'USDT-ERC20', 'USDT-TRC20'];  // �
 #####  会员等级名称  --------------------------------------------------------------------------------------------
 $_MT['user_level'] = [      // 等级 => 对应的名称显示
    -1 => '暂未激活',
-    0 => '免费会员',
+    0 => '免费套餐',
     1 => '青铜会员',
     2 => '白银会员',
-    3 => '钻石会员',
+    3 => 'VIP套餐',
 ];
 #####  用户注册  --------------------------------------------------------------------------------------------
 $_MT['register_code']               = false;          // true: 注册必须邀请码, false: 邀请码可不填 (admin面板 - 用户注册 - 将注册模式改为 invite)
 $_MT['register_restricted_email']   = true;      // 设置为true时，注册时必须使用指定的邮箱后缀;
-$_MT['list_of_available_mailboxes'] = [ '@qq.com', '@gmail.com', '@outlook.com', '@163.com', '@126.com', '@live.com', '@msn.com', '@yeah.net', '@foxmail.com', ];         // 注册邮箱可以使用的邮箱后缀,仅在上面设置为true时生效;
+$_MT['list_of_available_mailboxes'] = [ '@gmail.com','@sina.com','@qq.com','@outlook.com','@hotmail.com','@163.com','@126.com','@yeah.net','@foxmail.com','@protonmail.com','@proton.me' ];         // 注册邮箱可以使用的邮箱后缀,仅在上面设置为true时生效;
 $_MT['disable_mailbox_list']        = [ '@bcaoo.com', '@chacuo.net', '@tmpmail.net', '@tmail.ws', '@tmpmail.org', '@moimoi.re', '@bccto.me', '@027168.com', '@disbox.org', '@linshiyouxiang.net', '@t.odmail.cn', '@tmails.net', '@moakt.co', '@moakt.ws', '@disbox.net', '@bareed.ws', ];            // 注册邮箱禁止使用的邮箱后缀;
 
 # ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 # │                                              客服系统 设置                                                │
 # └──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-$_MT['enable_cust']                 = 'none';                   // 使用哪种客服系统  none: 关闭 目前支持: crisp | chatra
+$_MT['enable_cust']                 = 'crisp';                   // 使用哪种客服系统  none: 关闭 目前支持: crisp | chatra
 $_MT['enable_cust_auth']            = true;                     // 在登录注册页显示客服
 
 # crisp  |  https://crisp.chat
@@ -104,7 +104,7 @@ $_MT['chatra_id']                   = '';  // Chatra 的 ChatraID，可以在 Ch
 # │                                              页面内容 设置                                                │
 # └──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 # 节点中转规则
-$_MT['node_relay_enable'] = true;       // 导航菜单显示 节点中转 设置
+$_MT['node_relay_enable'] = false;       // 导航菜单显示 节点中转 设置
 # 限制地区访问
 $_MT['Restricted_access'] = false;   // 开启限制地区访问网站
 $_MT['Restricted_area'] = [     // 数组, 不允许访问的地区
@@ -207,7 +207,7 @@ $_MT['max_qqpay_pay']  = 'none';  // 支付金额大于上面设置的值时, �
 
 $_MT['pay_crypto']     = 'bobpay';	// 数字货币支付
 
-$_MT['mix_amount'] = 0;     // 限制每次最低充值, 商店购买套餐不受此限制。（因为商店扣除余额后可能出现很低的金额）
+$_MT['mix_amount'] = 2;     // 限制每次最低充值, 商店购买套餐不受此限制。（因为商店扣除余额后可能出现很低的金额）
 
 # ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 # │                                              商店套餐 设置                                                │
@@ -216,7 +216,7 @@ $_MT['mix_amount'] = 0;     // 限制每次最低充值, 商店购买套餐不�
 # 流量包只按流量计算 且只购买当日才能退
 $_MT['shop_conversion_mode']   = 'auto';
 $_MT['shop_conversion']        = false;                      // 允许套餐折算返还余额
-$_MT['shop_formalities']       = 2;                      // 套餐折算时扣除手续费 (单位: 百分比, 0 为不扣手续费) 不建议太高免得挨骂
+$_MT['shop_formalities']       = 20;                      // 套餐折算时扣除手续费 (单位: 百分比, 0 为不扣手续费) 不建议太高免得挨骂
 
 $_MT['advanceResetFlow']       = false;                  // 提前重置流量
 $_MT['resetFlow_maxValue']     = 5;                     // 用户流量低于多少(GB)时,才允许重置, -1为不限制
@@ -233,7 +233,7 @@ $_MT['shop_activity_text']     = '限时购买套餐, 过时不候';    //活动
 $_MT['shop_activity_id']       = 1;                         //活动套餐商品id
 $_MT['shop_activity_buy_time'] = '2020/03/15 00:00:00';     //活动截止购买时间, 到时间后套餐自动隐藏
 
-$_MT['shop_Experience_true']   = true;    // 是否显示试用套餐
+$_MT['shop_Experience_true']   = false;    // 是否显示试用套餐
 $_MT['shop_Experience_pos']    = 'top';    // 试用套餐卡片位置 top : 放于常规套餐前面, bottom : 放于常规套餐后面
 $_MT['shop_Experience_plan']   = [
     '试用 A' => 1,     // 一行一个试用套餐 ID, 可增加 可删除, 建议1-4个之间
@@ -246,13 +246,13 @@ $_MT['shop_Experience_plan']   = [
  * 商品的支持特性 直接编辑套餐的 [服务支持] 中填写,格式为   true-全球节点分布;false-快速客服响应   减号左边 true:代表支持 false:代表不支持 右边为文字, 以英文分号;隔开
  */
 $_MT['shop_plan'] = array(
-    '青铜套餐' => array(                    //  对应商店显示的名称
+    'VIP套餐' => array(                    //  对应商店显示的名称
         '描述' => array(  //  对应的商品描述, 目前取消了
-            '月付' => 1,                   // 对应的商品ID
-            '季度' => 2,
-            '半年' => 3,
-            '年付' => 4,
+            '月付' => 4,                   // 对应的商品ID
+            '季度' => 5,
+            '年付' => 6,
         ),
+/**
     ),
     '白银套餐' => array(            // 需要多个套餐可以自己复制array增加到下面
         '描述' => array(
@@ -260,6 +260,7 @@ $_MT['shop_plan'] = array(
             '季度' => 6,
             '年付' => 8,
         ),
+ */
     ),
 );
 
@@ -273,9 +274,9 @@ $_MT['enable_node_load']         = true;   // 是否显示节点的负载
 $_MT['node_flag_mode']           = 'name';   // name: 从节点名字正则匹配地区(正则方法在.config.php国旗选项) info: 为从节点状态取值，在节点列表里编辑节点，填写节点状态为 us 则显示美国国旗。us这个是国家ISO 3166码，不懂就谷歌。
 $_MT['node_class_name']          = [   //  节点的等级对应的名字
     0 => '公益节点',   // 格式为 节点等级 => 节点等级名字
-    1 => '青铜节点',
-    2 => '白银节点',
-    3 => '钻石节点',
+    1 => '警告',
+    2 => 'VMess',
+    3 => 'SSR',
 ];
 
 # ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -299,11 +300,11 @@ $_MT['Telegram_Payment'] = true;    // 用户充值提醒
  */
 $_MT['client_windows'] = [
     'clash' => array(           // 一个array为一个客户端, 可以自行增加或删除
-        'name'  => 'Bob加速器',      // 客户端名称
+        'name'  => 'Clash',      // 客户端名称
         'img'   => 'https://img-youpai.weixiaoi.com/tu/2021/0406/1617693954210406.png',        // 图标, 使用png透明文件
         'url'   => '/user/tutorial?os=Windows&client=Clash',      // 安装教程的url地址
-        'down'  => 'https://www.google.com',              // 教程页里的客户端下载地址
-        'vs'    => 'v3.2.4',     // 版本号
+        'down'  => '/user/tutorial?os=Windows&client=Clash',              // 教程页里的客户端下载地址
+        'vs'    => '最新',     // 版本号
     ),
 ];
 
@@ -312,11 +313,11 @@ $_MT['client_windows'] = [
  */
 $_MT['client_android'] = [
     'clash' => array(
-        'name'  => 'Bob加速器',
+        'name'  => 'Clash',
         'img'   => 'https://img-youpai.weixiaoi.com/tu/2021/0406/1617693954210406.png',
         'url'   => '/user/tutorial?os=Android&client=Clash',
-        'down'  => 'https://www.google.com',
-        'vs'    => 'v2.0.0',
+        'down'  => '/user/tutorial?os=Android&client=Clash',
+        'vs'    => '最新',
     ),
 ];
 
@@ -326,11 +327,11 @@ $_MT['client_android'] = [
  */
 $_MT['client_macos'] = [
     'clash' => array(
-        'name'  => 'Bob加速器',
+        'name'  => 'ClashX',
         'img'   => 'https://img-youpai.weixiaoi.com/tu/2021/0406/1617693954210406.png',
         'url'   => '/user/tutorial?os=MacOS&client=Clash',
-        'down'  => 'https://www.google.com',
-        'vs'    => 'v3.2.4',
+        'down'  => '/user/tutorial?os=MacOS&client=Clash',
+        'vs'    => '最新',
     ),
 ];
 
@@ -342,14 +343,16 @@ $_MT['client_ios'] = [
         'name'  => 'Shadowrocket',
         'img'   => $_MT['assets_url'].'/media/client-logos/shadowrocket-ico.png',
         'url'   => '/user/tutorial?os=iOS&client=Shadowrocket',
-        'vs'    => 'v0.10.0',
+        'vs'    => '最新',
     ),
+/**
     'Quantumult' => array(
         'name'  => 'Quantumult',
         'img'   => $_MT['assets_url'].'/media/client-logos/quantumult-ico.png',
         'url'   => '/user/tutorial?os=iOS&client=Quantumult',
         'vs'    => 'v1.1.0.1',
     ),
+ */
 ];
 # 教程页共享账号
 $_MT['ios_class']    = 2;    //iOS账户多少级以上可见(包括)
