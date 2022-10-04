@@ -18,7 +18,7 @@ $_MT['index_enable'] = false;                // true: 开启落地页 false:关�
 
 #####  背景图设置  --------------------------------------------------------------------------------------------
 // 登录/注册页面 背景图
-$_MT['index_background_image'] = "https://cdn.jsdelivr.net/gh/BobCoderS9/metron-assets@3.0.2/metron/media/bg/bg-2.jpg";
+$_MT['index_background_image'] = "/images/neha2.jpg";
 // 登录/注册页面 LOGO
 $_MT['index_background_logo'] = "https://cdn.jsdelivr.net/gh/BobCoderS9/metron-assets@3.0.2/metron/media/logos/user.png";
 // 用户中心顶部背景图
@@ -189,13 +189,13 @@ $_MT['shared_account'] = [
 # 微信  : codepay | stripe | paytaro | wolfpay_ur | payjs
 # QQ钱包: codepay |
 
-$_MT['pay_alipay']     = 'none';        // 支付宝默认
+$_MT['pay_alipay']     = 'epay';        // 支付宝默认
 $_MT['pay_alipay_2']     = 'none';        // 支付宝2
 $_MT['pay_alipay_3']     = 'none';        // 支付宝3
 $_MT['max_alipay_num'] = 0;     // 使用支付宝支付时, 金额大于等于设定值, 使用下方支付方式 (设置 0 不使用)
 $_MT['max_alipay_pay'] = 'none';      // 支付金额大于上面设置的值时, 使用此支付方式
 
-$_MT['pay_wxpay']      = 'none';      // 微信默认
+$_MT['pay_wxpay']      = 'epay';      // 微信默认
 $_MT['pay_wxpay_2']      = 'none';      // 微信2
 $_MT['pay_wxpay_3']      = 'none';      // 微信3
 $_MT['max_wxpay_num']  = 0;     // 使用微信支付时, 金额大于等于设定值, 使用下方支付方式 (设置 0 不使用)
@@ -246,21 +246,20 @@ $_MT['shop_Experience_plan']   = [
  * 商品的支持特性 直接编辑套餐的 [服务支持] 中填写,格式为   true-全球节点分布;false-快速客服响应   减号左边 true:代表支持 false:代表不支持 右边为文字, 以英文分号;隔开
  */
 $_MT['shop_plan'] = array(
-    'VIP套餐' => array(                    //  对应商店显示的名称
+    'VIP月付' => array(                    //  对应商店显示的名称
         '描述' => array(  //  对应的商品描述, 目前取消了
-            '月付' => 4,                   // 对应的商品ID
-            '季度' => 5,
-            '年付' => 6,
+            '月付' => 1,                   // 对应的商品ID
         ),
-/**
     ),
-    '白银套餐' => array(            // 需要多个套餐可以自己复制array增加到下面
-        '描述' => array(
-            '月付' => 5,
-            '季度' => 6,
-            '年付' => 8,
+    'VIP季付' => array(                    //  对应商店显示的名称
+        '描述' => array(  //  对应的商品描述, 目前取消了
+            '季付' => 2,                   // 对应的商品ID
         ),
- */
+    ),
+    'VIP年付' => array(                    //  对应商店显示的名称
+        '描述' => array(  //  对应的商品描述, 目前取消了
+            '年付' => 3,                   // 对应的商品ID
+        ),
     ),
 );
 

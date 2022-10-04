@@ -351,9 +351,9 @@ $_ENV['mgate_app_secret'] = '';
 
 #epay
 $_ENV['epay'] = [
-    'epay_api_url' => '',
-    'epay_pid' => '',
-    'epay_key' => '',
+    'epay_api_url' => 'APi地址',
+    'epay_pid' => 'API-ID',
+    'epay_key' => 'API',
     'transport' => 'https',
 ];
 
